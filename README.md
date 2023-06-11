@@ -12,6 +12,7 @@
     + **deepwalk.py**: Đây là file code nhằm sử dụng thuật toán **Deepwalk** để chuẩn bị dữ liệu các chuỗi bước đi, nhằm chuẩn bị cho quá trình training thuật toán **word2vec** để tạo ra embedding cho các node trên đồ thị.
     + **model_training.py**: Trong file này, mô hình sẽ sử dụng dữ liệu được sinh ra từ **deepwalk** để training mô hình embedding, sau đó lưu vào file **embedd.bin**.
     + **model_prediction.py**: File này có nhiệm vụ, dự đoán ra một list danh sách cuốn sách có thể gợi ý cho người dùng, dựa trên độ tương tự của các **embedding node**.
+  - **weight**: Thư mục chứ thông tin mô hình embedding sau khi được train.
   - **requirement.txt**: Thông tin các packages cần thiết cho quá trình running source code.
 
 ## **II. Usage**:
