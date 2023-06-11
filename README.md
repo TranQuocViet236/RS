@@ -20,7 +20,7 @@
     
   **1. Prediction with user_id**: python .\main.py --user_id **user_id_muốn_gợi_ý**
 
-    + Example: user_id**: python .\main.py --user_id 2
+    + Example: user_id: python .\main.py --user_id 2
     * Output: 
 
   | Book-Title                                        | Score   |
