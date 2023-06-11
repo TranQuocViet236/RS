@@ -1,0 +1,6 @@
+file_path:
+  book_hist: book_crossing/book_history.dat
+  book_rate: book_crossing/book_ratings.dat
+  items_info: book_crossing/items_info.dat
+  users_info: book_crossing/users_info.dat
+

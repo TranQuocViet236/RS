@@ -1,0 +1,6 @@
+pandas==2.0.2
+numpy==1.24.3
+gensim==4.3.1
+omegaconf==2.3.0
+networkx==3.1
+tqdm==4.65.0
