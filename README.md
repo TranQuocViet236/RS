@@ -14,7 +14,7 @@
     + **model_prediction.py**: File này có nhiệm vụ, dự đoán ra một list danh sách cuốn sách có thể gợi ý cho người dùng, dựa trên độ tương tự của các **embedding node**.
   - **requirement.txt**: Thông tin các packages cần thiết cho quá trình running source code.
 
-**II. Usage**:
+## **II. Usage**:
   - **Setup environment**:  
     + **Install required packages**: pip install -r requirements.txt
     
