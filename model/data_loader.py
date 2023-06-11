@@ -1,17 +1,17 @@
-# data paths
-book_hist_path = 'book_crossing/book_history.dat'
-book_rate_path = 'book_crossing/book_ratings.dat'
-items_info_path = 'book_crossing/items_info.dat'
-users_info_path = 'book_crossing/users_info.dat'
-
 import pandas as pd
 import numpy as np
-from omegaconf import OmegaConf
+from model.var_from_cfg import book_hist_path, book_rate_path,\
+                        users_info_path, items_info_path
 
 
 
 class DataLoader:
     def __init__(self):
+        """
+         Read and process data from .dat file and add to DataLoader property
+         Handle some invalid values cases when input data
+        """
+
         # read data from .dat file
         self.book_hist_df = self.data_reader(book_hist_path)
         self.book_rate_df = self.data_reader(book_rate_path)
@@ -23,9 +23,23 @@ class DataLoader:
 
     @staticmethod
     def data_reader(file_path):
-        return pd.read_csv(file_path, delimiter='\t', na_values=np.nan)
+        """
+         Reads data from tab delimeted file. 
+         
+         @param file_path - Path to file to read
+         
+         @return DataFrame with data from file_path and na_values
+        """
+        df = pd.read_csv(file_path, delimiter='\t', na_values=np.nan)
+
+        return df
+    
 
     def handle_users_info(self):
+        """
+        Fill age and users_info_df with mean age of people
+        Extract country columns from location
+        """
 
         # replace age > 90 or age < 5 with nan values (people who has age more than 90 or less than 5 usually can't rate books much)
         self.users_info_df.loc[(self.users_info_df.Age > 90) | (self.users_info_df.Age < 5), 'Age'] = np.nan
@@ -38,9 +52,13 @@ class DataLoader:
 
         # get user country
         self.users_info_df['Country'] = self.users_info_df['Location'].apply(lambda x: x.split(',')[-1].strip())
-        # print(self.users_info_df['Country'].unique())
+
 
     def handle_items_info(self):
+        """
+         Replace some error values with correct ones
+        """
+
         # replace some error values (input to wrong columns)
         self.items_info_df.loc[self.items_info_df['Year-Of-Publication'] == 'Hutchinson', 'Year-Of-Publication'] = 1973
         self.items_info_df.loc[self.items_info_df['Year-Of-Publication'] == 'Baldini&amp Castoldi', 'Year-Of-Publication'] = 1994
@@ -50,6 +68,9 @@ class DataLoader:
 
 
     def merge_rating_info(self):
+        """
+         Merge ratings from users and books into one dataframe and return the result
+        """
         self.book_rate_df = self.book_rate_df.rename(columns={'user': 'User-ID',
                                                               'item': 'Book-ID'})
         self.items_info_df = self.items_info_df.rename(columns={'Book_ID': 'Book-ID'})
@@ -85,10 +106,12 @@ class DataLoader:
 
 
     def handle_data_process(self):
+        """
+         Process data and merge ratings into one.
+        """
         self.handle_items_info()
         self.handle_users_info()
         self.merge_rating_info()
-
 
 
 

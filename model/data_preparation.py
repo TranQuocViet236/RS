@@ -1,12 +1,24 @@
 import networkx as nx
-from data_loader import DataLoader
+from model.data_loader import DataLoader
+
+
 
 class DataPreparation(DataLoader):
     def __init__(self):
+        """
+         Initialize the graph. This is called before __init__ to ensure that the graph is ready
+        """
         super().__init__()
         self.books, self.users, self.edges = self.get_graph_info()
 
+
     def get_graph_info(self):
+        """
+         Get information about the graph. This is a list of books, users and edges
+         
+         
+         @return A 3 - tuple of lists of books
+        """
         # Merging book rate info and item info
         df = self.book_rate_df.merge(self.items_info_df, on="Book-ID")
 
@@ -27,6 +39,12 @@ class DataPreparation(DataLoader):
 
     @property
     def generate_graph(self):
+        """
+         Generate bipartite graph from books and users. This is a convenience method to generate a bipartite graph from books and users.
+         
+         
+         @return Graph with bipartite nodes and edges as nodes
+        """
         # init graph
         G = nx.Graph()
 
@@ -40,8 +58,6 @@ class DataPreparation(DataLoader):
         return G
 
 
-
-
 if __name__ == '__main__':
     DataPreparation = DataPreparation()
-    DataPreparation.merge_df()
+    DataPreparation.get_graph_info()

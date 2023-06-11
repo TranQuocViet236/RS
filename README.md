@@ -14,4 +14,26 @@
     + **model_prediction.py**: File này có nhiệm vụ, dự đoán ra một list danh sách cuốn sách có thể gợi ý cho người dùng, dựa trên độ tương tự của các **embedding node**.
   - **requirement.txt**: Thông tin các packages cần thiết cho quá trình running source code.
 
-## II. Usage:
+**II. Usage**:
+  - **Setup environment**:  
+    + **Install required packages**: pip install -r requirements.txt
+    
+  **1. Prediction with user_id**: python .\main.py --user_id **user_id_muốn_gợi_ý**
+
+    + Example: user_id**: python .\main.py --user_id 2
+    * Output: 
+
+  | Book-Title                                        | Score   |
+  |---------------------------------------------------|---------|
+  | Thinking in Java (2nd Edition)                    | 0.601480| 
+  | Something M.Y.T.H. Inc (Robert Asprin's Myth)     |0.536046|
+  | Meet Felicity: An American Girl : 1774 (The Am... |0.535973|
+| Runaway Pony (Pony Pals (Paperback))              |0.493083|
+| The Book of Lost Tales 1 (The History of Middl... |0.491807|
+ | Crazy Horse                                       | 0.486763  |
+ | Bunnicula: A Rabbit-Tale of Mystery               |0.479550|
+  | When the Wind Blows                               |0.476952|
+   | Real Father (Twins) (Super Romance Series)        |0.474158|
+ | Harry Potter and the Chamber of Secrets (Book 2)  |0.471537|
+
+
