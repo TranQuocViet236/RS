@@ -23,7 +23,7 @@
   - **Setup environment**:  
     + **Install required packages**: pip install -r requirements.txt
     
-  **1. Prediction with user_id**: python .\main.py --user_id **user_id_muốn_gợi_ý**
+  ** Prediction with user_id**: python .\main.py --user_id **user_id_muốn_gợi_ý**
 
     + Example:  python .\main.py --user_id 2
     * Output: 
