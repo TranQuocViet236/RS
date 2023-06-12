@@ -15,7 +15,7 @@
     + **model_prediction.py**: File này có nhiệm vụ, dự đoán ra một list danh sách cuốn sách có thể gợi ý cho người dùng, dựa trên độ tương tự của các **embedding node**.
   - **weight**: Thư mục chứ thông tin mô hình embedding sau khi được train.
   - **requirement.txt**: Thông tin các packages cần thiết cho quá trình running source code.
-  - **model_training.py**: Trong file này, mô hình sẽ sử dụng dữ liệu được sinh ra từ **deepwalk** để training mô hình embedding, sau đó lưu vào file **embedd.bin**.
+  - **model_training.py**: Trong file này, mô hình sẽ sử dụng dữ liệu được sinh ra từ **deepwalk** để training mô hình embedding, sau đó lưu vào file **embedd.bin** ở thư mục **weight**.
      Nếu bạn muốn training lại mô hình, có thể chạy lại file này, và điều chỉnh tham số ở file config.yaml trong thư mục config.
   - **easy_user.ipynb**: File này ghi lại flow (clone source, cài đặt requirement và dự đoán) dễ, đơn giản và nhanh chóng để tương tác với mô hình.
 
