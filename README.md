@@ -4,6 +4,8 @@
 
   - **config**: Thư mục chứa thông tin config, đường dẫn file dữ liệu, các tham số cho mô hình.
 
+  - **documents**: Chứa file pdf mô tả thông tin document về dự án.
+
   - **eda_notebooks**: Thư mục chứa file Jupyter notebook (file .ipynb) mô tả thông tin EDA dữ liệu.
 
   - **model**: Thư mục chứa source code liên quan đến mô hình:
