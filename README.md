@@ -46,3 +46,5 @@
     + Output:
 [{"Book-Title":"The Other Side of the Story : A Novel (Keyes, Marian)","Score":0.421561569},{"Book-Title":"Happy and Sad, Grouchy and Glad (Little Golden Book)","Score":0.3790979981},...]
 
+  - **Easy use**:  
+    Run source code, tương tác, dự đoán với mô hình với 3 cell code, tương tự như file **easy_use.ipynb**.
